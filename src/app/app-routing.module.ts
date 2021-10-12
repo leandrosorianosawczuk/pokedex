@@ -11,6 +11,11 @@ const routes: Routes = [
     redirectTo: '/pokemon',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: '/pokemon',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
