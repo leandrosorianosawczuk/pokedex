@@ -1,0 +1,24 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-xl="3" size-lg="4" size-md="4" size-sm="6" *ngFor="let detail of pokemonsDetail">
+
+      <ion-card (mouseenter)="animationBounce($event, true)" (mouseleave)="animationBounce($event, false)" (click)="presentModal( detail.id )">
+        <ion-card-header>
+          <ion-card-subtitle *ngIf="detail.id < 10">#00{{ detail.id }}</ion-card-subtitle>
+          <ion-card-subtitle *ngIf="detail.id >= 10 && detail.id < 100">#0{{ detail.id }}</ion-card-subtitle>
+          <ion-card-subtitle *ngIf="detail.id >= 100">#{{ detail.id }}</ion-card-subtitle>
+          <ion-card-title class="ion-text-capitalize">{{ detail.name }}</ion-card-title>
+        </ion-card-header>
+
+        <div class="pokemon-artwork-container">
+          <ion-img [src]="detail.image" class="img-details"></ion-img>
+        </div>
+
+        <ion-card-content class="ion-text-right">
+          <ion-badge *ngFor="let types of detail.type" [class]="types.type.name" mode="md">{{ types.type.name }}</ion-badge>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

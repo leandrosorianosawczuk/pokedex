@@ -1,0 +1,11 @@
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-text-center">
+    <ion-button class="ion-margin-start" slot="start" (click)="previousPokemons()" *ngIf="paginator < 20" size="small" color="dark" disabled>Back</ion-button>
+    <ion-button class="ion-margin-start" slot="start" (click)="previousPokemons()" *ngIf="paginator >= 20" size="small" color="dark">Back</ion-button>
+
+    <img src="../../../assets/images/pokedex-footer.png" class="pokedex-footer">
+
+    <ion-button class="ion-margin-end" slot="end" (click)="nextPokemons()" *ngIf="paginator <= 160" size="small" color="dark">Next</ion-button>
+    <ion-button class="ion-margin-end" slot="end" (click)="nextPokemons()" *ngIf="paginator > 160" size="small" color="dark" disabled>Next</ion-button>
+  </ion-toolbar>
+</ion-footer>

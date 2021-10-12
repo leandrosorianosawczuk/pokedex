@@ -1,0 +1,7 @@
+{
+  "name": "pokedex-lss",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

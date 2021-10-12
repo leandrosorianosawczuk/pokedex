@@ -1,0 +1,65 @@
+<!-- Header. -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start" mode="md" class="ion-text-capitalize">
+      {{id.name}}
+      <span class="pokemon-id" *ngIf="id.id < 10"> #00{{id.id}}</span>
+      <span class="pokemon-id" *ngIf="id.id >= 10 && id.id < 100"> #0{{id.id}}</span>
+      <span class="pokemon-id" *ngIf="id.id >= 100"> #{{id.id}}</span>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Pokémon details. -->
+<ion-content class="ion-text-center ion-padding-vertical">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-xl="6" size-lg="6" size-md="6" size-sm="6">
+        <ion-img [src]="id.image" class="img-details"></ion-img>
+        <h3>Type</h3>
+        <p>
+          <ion-badge *ngFor="let types of id.type" [class]="types.type.name" mode="md">{{ types.type.name }}</ion-badge>
+        </p>
+      </ion-col>
+      <ion-col size="12" size-xl="6" size-lg="6" size-md="6" size-sm="6">
+        <div class="details-bg">
+          <ion-row>
+            <ion-col class="ion-text-left">
+              <p class="characteristics-title">Height:</p>
+              <p>{{((id.height / 10) * 100).toFixed(1)}} cm</p>
+              <p class="characteristics-title">Weight:</p>
+              <p>{{(id.weight / 10).toFixed(1)}} kg</p>
+            </ion-col>
+            <ion-col class="ion-text-left">
+              <p class="characteristics-title">Experience:</p>
+              <p>{{id.experience}}</p>
+              <p class="characteristics-title">Abilities:</p>
+              <p class="ion-text-capitalize" *ngFor="let ability of id.abilities">{{ability.ability.name}}</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Evolution chain. -->
+  <div>
+    <h3>Evolution Chain</h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="card-poke-details" *ngIf="pokemonsDetails.length == 0">
+            <ion-card-content>
+              <p class="ion-text-capitalize">This Pokémon does not evolve</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <evolution-card *ngIf="pokemonsDetails.length > 0" [pokemonsDetail]="pokemonsDetails"></evolution-card>
+  </div>
+</ion-content>

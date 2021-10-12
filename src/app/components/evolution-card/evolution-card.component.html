@@ -1,0 +1,19 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size-xs="12" size-sm="4" *ngFor="let pokemon of pokemonsDetail">
+
+      <ion-card (mouseenter)="animationBounce($event, true)" (mouseleave)="animationBounce($event, false)" *ngIf="pokemon != 'no-evolution'" (click)="presentModal( pokemon.id )">
+        <ion-card-content>
+          <ion-img [src]="pokemon.image" class="img-details"></ion-img>
+          <ion-card-title class="ion-text-capitalize">
+            {{pokemon.name}}
+            <span class="pokemon-id" *ngIf="pokemon.id < 10"> #00{{pokemon.id}}</span>
+            <span class="pokemon-id" *ngIf="pokemon.id >= 10 && pokemon.id < 100"> #0{{pokemon.id}}</span>
+            <span class="pokemon-id" *ngIf="pokemon.id >= 100"> #{{pokemon.id}}</span>
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,37 @@
+ion-toolbar {
+  --background: #dc0a2d;
+}
+
+ion-icon {
+  color: white;
+}
+
+ion-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-left: 20px;
+}
+
+.pokemon-id {
+  font-size: 10px;
+}
+
+.characteristics-title {
+  font-weight: 700;
+}
+
+.img-details {
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+}
+
+.details-bg {
+  background-color:#f0f0f0;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+}

@@ -1,0 +1,155 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: 'Pokemon';
+  src: url('./assets/fonts/Pokemon_Solid.ttf');
+}
+
+/* Color pokemon type badges. */
+ion-badge {
+  --padding-start: 1em;
+  --padding-end: 1em;
+  margin: 0 0.5em 0 0.5em;
+}
+
+ion-badge.normal {
+  background-color: #004a23;
+  text-transform: capitalize;
+}
+
+ion-badge.fighting {
+  background-color: #c00b0b;
+  text-transform: capitalize;
+}
+
+ion-badge.flying {
+  background-color: #2a98ff;
+  text-transform: capitalize;
+}
+
+ion-badge.poison {
+  background-color: #6f008f;
+  text-transform: capitalize;
+}
+
+ion-badge.ground {
+  background-color: #521717;
+  text-transform: capitalize;
+}
+
+ion-badge.rock {
+  background-color: #414040;
+  text-transform: capitalize;
+}
+
+ion-badge.bug {
+  background-color: #41b166;
+  text-transform: capitalize;
+}
+
+ion-badge.ghost {
+  background-color: #3a428c;
+  text-transform: capitalize;
+}
+
+ion-badge.steel {
+  background-color: #3a3a3b;
+  text-transform: capitalize;
+}
+
+ion-badge.fire {
+  background-color: #fb0505;
+  text-transform: capitalize;
+}
+
+ion-badge.water {
+  background-color: #0245c0;
+  text-transform: capitalize;
+}
+
+ion-badge.grass {
+  background-color: #34850b;
+  text-transform: capitalize;
+}
+
+ion-badge.electric {
+  background-color: #c5b000;
+  text-transform: capitalize;
+}
+
+ion-badge.psychic {
+  background-color: #b28c5e;
+  text-transform: capitalize;
+}
+
+ion-badge.ice {
+  background-color: #809dad;
+  text-transform: capitalize;
+}
+
+ion-badge.dragon {
+  background-color: #c30005;
+  text-transform: capitalize;
+}
+
+ion-badge.dark {
+  background-color: #292929;
+  text-transform: capitalize;
+}
+
+ion-badge.fairy {
+  background-color: #9a00a4;
+  text-transform: capitalize;
+}
+
+ion-badge.unknown {
+  background-color: #000000;
+  text-transform: capitalize;
+}
+
+ion-badge.shadow {
+  background-color: #282828;
+  text-transform: capitalize;
+}
+
+/* Cards animations. */
+.animate__animated.animate__pulse {
+  --animate-duration: 300ms;
+}
+
+/* For desktop only. */
+html.plt-desktop ion-card.card-poke-details {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+html.plt-desktop .modal-wrapper.sc-ion-modal-md, .modal-shadow.sc-ion-modal-md {
+  width: 90%;
+  height: 90%;
+}
